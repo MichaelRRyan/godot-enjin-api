@@ -2,7 +2,7 @@ class_name GraphQLQuery
 
 var _name : String = ""
 var _arguments : Dictionary = {}
-var _properties : Array = []
+var _fields : Array = []
 
 
 #-------------------------------------------------------------------------------
@@ -17,8 +17,8 @@ func set_args(args : Dictionary) -> GraphQLQuery:
 
 	
 #-------------------------------------------------------------------------------
-func set_props(props : Array) -> GraphQLQuery:
-	_properties = props
+func set_fields(fields : Array) -> GraphQLQuery:
+	_fields = fields
 	return self
 
 
@@ -36,13 +36,13 @@ func to_string() -> String:
 		output += ")"
 	
 	# Converts the properties to a string.
-	if not _properties.empty():
+	if not _fields.empty():
 		output += " {\n"
-		for prop in _properties:
-			if prop is GraphQLQuery:
-				output += prop + "\n"
+		for field in _fields:
+			if field is GraphQLQuery:
+				output += field + "\n"
 			else:
-				output += prop + "\n"
+				output += field + "\n"
 		output += "}"
 	
 	return output
