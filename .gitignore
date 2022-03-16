@@ -1,6 +1,7 @@
 # Project specific ignores
 icon.png.import
 default_env.tres
+#demo/secret.gd
 
 # Godot 4+ specific ignores
 .godot/

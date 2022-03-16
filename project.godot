@@ -33,11 +33,14 @@ _global_script_class_icons={
 [application]
 
 config/name="godot-enjin-api"
+run/main_scene="res://demo/demo.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GraphQL="*res://addons/GodotGraphQL/src/gql_client.gd"
+Enjin="*res://addons/godot-enjin-api/scripts/enjin_api.gd"
+Secret="*res://demo/secret.gd"
 
 [physics]
 
