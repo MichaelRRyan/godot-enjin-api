@@ -3,16 +3,8 @@ extends Node
 
 #-------------------------------------------------------------------------------
 func _ready():
-	call_deferred("_test")
-	
-
-#-------------------------------------------------------------------------------
-func _test():
-	# Runs the login query.
-	Enjin.schema.login_query.run({
-		"email": Secret.username,
-		"password": Secret.password,
-	})
+	Enjin.connect_to_enjin()
+	Enjin.login(Secret.username, Secret.password)
 
 
 #-------------------------------------------------------------------------------
